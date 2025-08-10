@@ -5,43 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e765169-c360-4b22-9a63-92d68b7b65ff" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/file.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/globe.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/next.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/photos/014A9534.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/photos/455303D9-4AFE-47B9-A399-60C502215EB1.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/photos/IMG_0418.HEIC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/photos/IMG_0446.HEIC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/photos/IMG_3074.HEIC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/photos/IMG_3077.HEIC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/photos/IMG_3277.HEIC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/photos/IMG_3458.HEIC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/photos/IMG_3512.HEIC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/photos/IMG_3682.HEIC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/photos/IMG_3738.HEIC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/photos/IMG_4269.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/photos/IMG_4270.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/photos/IMG_5606.HEIC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/photos/IMG_5668.HEIC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/photos/IMG_5734.HEIC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/photos/IMG_5862.HEIC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/photos/IMG_6267.HEIC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/photos/IMG_6283.HEIC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/photos/IMG_6987.HEIC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/photos/IMG_7583.HEIC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/photos/IMG_7713.HEIC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/photos/IMG_7821.HEIC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/photos/IMG_7964.HEIC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/photos/IMG_8176.HEIC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/photos/IMG_8418.HEIC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/photos/IMG_8496.HEIC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/photos/IMG_8586.HEIC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/photos/IMG_9774.HEIC" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vercel.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/window.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HeroWedding.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HeroWedding.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/motion/scroll-triggered/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/motion/scroll-triggered/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Gallery.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/motion/enter/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/motion/exit-animation/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/new-countdown.tsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

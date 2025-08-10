@@ -21,18 +21,12 @@ const imageFilterStyle: React.CSSProperties = {
 };
 
 const photos = [
-  { src: "/11zon_compressed/014A9534_1_11zon.jpg", alt: "photo 1" },
   {
     src: "/11zon_compressed/455303D9-4AFE-47B9-A399-60C502215EB1_2_11zon.jpg",
     alt: "photo 2",
   },
-  { src: "/11zon_compressed/IMG_0418_3_11zon.jpg", alt: "photo 3" },
   { src: "/11zon_compressed/IMG_3074_6_11zon.jpg", alt: "photo 5" },
-  { src: "/11zon_compressed/IMG_3277_8_11zon.jpg", alt: "photo 7" },
   { src: "/11zon_compressed/IMG_3682_12_11zon.jpg", alt: "photo 10" },
-  { src: "/11zon_compressed/IMG_3738_13_11zon.jpg", alt: "photo 11" },
-  { src: "/11zon_compressed/IMG_5606_18_11zon.jpg", alt: "photo 14" },
-  { src: "/11zon_compressed/IMG_5668_19_11zon.jpg", alt: "photo 15" },
 ];
 
 export default function ScrollTriggered() {

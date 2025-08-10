@@ -32,7 +32,7 @@ export default function HeroWedding() {
       <Box
         id={"cveto4nyi-fon"}
         position={"absolute"}
-        bgImage={"url(/upl1425.png)"}
+        // bgImage={"url(/upl1425.png)"}
         inset={0}
         bgSize="auto"
         bgPos="center"
@@ -56,22 +56,18 @@ export default function HeroWedding() {
           </VStack>
 
           {/* Дата и место */}
-          <VStack gap={2} maxW="2xl">
-            <Box px={4} py={2}>
-              <Text
-                fontSize={{ base: "xl", md: "2xl" }}
-                color="gray.700"
-                fontWeight="medium"
-              >
-                13 сентября 2025 года
-              </Text>
-            </Box>
+          <VStack gap={2} maxW="2xl" fontFamily={"fantasy"}>
+            <Text
+              fontSize={{ base: "xl", md: "2xl" }}
+              color="gray.700"
+              fontWeight="medium"
+            >
+              13.09.2025 17:00
+            </Text>
 
-            <Box px={4} py={2}>
-              <Text fontSize={{ base: "lg", md: "xl" }} color="gray.600">
-                Ресторан "Сары Арка", Семей
-              </Text>
-            </Box>
+            <Text fontSize={{ base: "lg", md: "xl" }} color="gray.600">
+              Ресторан "Сары Арка", Семей
+            </Text>
           </VStack>
 
           {/* CTA кнопки */}
@@ -100,21 +96,6 @@ export default function HeroWedding() {
           </VStack>
         </VStack>
       </Container>
-
-      {/* Нижний декоративный элемент */}
-      <Box
-        position="absolute"
-        bottom="5%"
-        right="15%"
-        w="150px"
-        h="150px"
-        opacity={0.05}
-        transform="rotate(15deg)"
-      >
-        <svg viewBox="0 0 100 100" fill="currentColor" color="rose.200">
-          <path d="M50 5c-15 0-27 12-27 27s12 27 27 27 27-12 27-27-12-27-27-27zm0 45c-9.9 0-18-8.1-18-18s8.1-18 18-18 18 8.1 18 18-8.1 18-18 18z" />
-        </svg>
-      </Box>
     </Box>
   );
 }

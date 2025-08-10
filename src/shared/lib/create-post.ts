@@ -1,8 +1,8 @@
 "use server";
 
-import { supabase } from "@/components/lib/supabase";
+import { supabase } from "./supabase";
 
-export async function addItem(formData) {
+export async function addItem(formData: any) {
   const { data, error } = await supabase
     .from("wedding") // имя твоей таблицы
     .insert([formData]);

@@ -5,12 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e765169-c360-4b22-9a63-92d68b7b65ff" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/app/_page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Gallery.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/motion/enter/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/motion/exit-animation/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/new-countdown.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Countdown.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HeroWedding.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/lib/create-post.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/lib/supabase.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/motion/scroll-triggered/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/color-mode.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/provider/emotion-cache.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/provider/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/provider/provider.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/toaster.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/tooltip.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/rsvp-form/ui/RsvpForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/rsvp-form/ui/RsvpForm.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

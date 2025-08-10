@@ -1,4 +1,4 @@
-import { Provider } from "@/components/ui/provider/provider";
+import { Provider } from "@/shared/ui/provider";
 import { Box } from "@chakra-ui/react";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";

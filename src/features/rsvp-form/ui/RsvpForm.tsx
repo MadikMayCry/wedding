@@ -12,8 +12,8 @@ import {
   Spinner,
 } from "@chakra-ui/react";
 import { motion } from "motion/react";
-import { addItem } from "@/components/lib/create-post";
-import { toaster } from "@/components/ui/toaster";
+import { addItem } from "@/shared/lib";
+import { toaster } from "@/shared/ui";
 import {
   RsvpFormValues,
   rsvpDefaultValues,

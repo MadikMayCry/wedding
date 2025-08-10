@@ -58,7 +58,7 @@ function Card({ photo, i }: CardProps) {
 
   return (
     <motion.div
-      initial={{ ...dir, opacity: 0, filter: "blur(8px)" }}
+      initial={{ ...dir, opacity: 0, filter: "blur(80px)" }}
       whileInView={{
         x: 0,
         y: 0,
@@ -66,7 +66,7 @@ function Card({ photo, i }: CardProps) {
         opacity: 1,
         filter: "blur(0px)",
       }}
-      viewport={{ amount: 0 }}
+      viewport={{ once: true }}
       transition={{ type: "spring", bounce: 0.35, duration: 0.9 }}
     >
       <Flex
@@ -77,14 +77,14 @@ function Card({ photo, i }: CardProps) {
         pt={5}
         mb="-120px"
       >
-        <Box
-          inset={0}
-          position="absolute"
-          css={{
-            background,
-            clipPath: `path("M 0 303.5 C 0 292.454 8.995 285.101 20 283.5 L 460 219.5 C 470.085 218.033 480 228.454 480 239.5 L 500 430 C 500 441.046 491.046 450 480 450 L 20 450 C 8.954 450 0 441.046 0 430 Z")`,
-          }}
-        />
+        {/*<Box*/}
+        {/*  inset={0}*/}
+        {/*  position="absolute"*/}
+        {/*  css={{*/}
+        {/*    background,*/}
+        {/*    clipPath: `path("M 0 303.5 C 0 292.454 8.995 285.101 20 283.5 L 460 219.5 C 470.085 218.033 480 228.454 480 239.5 L 500 430 C 500 441.046 491.046 450 480 450 L 20 450 C 8.954 450 0 441.046 0 430 Z")`,*/}
+        {/*  }}*/}
+        {/*/>*/}
 
         <motion.div
           whileHover={{ scale: 1.03, rotate: settleRotate * 0.9 }}
@@ -106,25 +106,14 @@ function Card({ photo, i }: CardProps) {
               shadow: "2xl",
             }}
           >
-            <motion.div
-              style={{ position: "absolute", inset: 0 }}
-              animate={{ scale: [1, 1.05, 1], x: [0, -10, 0], y: [0, -6, 0] }}
-              transition={{
-                duration: 12,
-                repeat: Infinity,
-                repeatType: "mirror",
-                ease: "easeInOut",
-              }}
-            >
-              <Image
-                quality={25}
-                src={photo.src}
-                alt={photo.alt}
-                fill
-                objectFit="cover"
-                style={imageFilterStyle}
-              />
-            </motion.div>
+            <Image
+              quality={25}
+              src={photo.src}
+              alt={photo.alt}
+              fill
+              objectFit="cover"
+              style={imageFilterStyle}
+            />
 
             {/* Нежный оверлей */}
             <Box
@@ -134,21 +123,6 @@ function Card({ photo, i }: CardProps) {
               opacity={0.3}
               pointerEvents="none"
             />
-
-            {/* Цветочный декоративный элемент */}
-            <Box
-              position="absolute"
-              top="20px"
-              right="20px"
-              w="40px"
-              h="40px"
-              opacity={0.7}
-              transform="rotate(15deg)"
-            >
-              <svg viewBox="0 0 100 100" fill="currentColor" color="pink.300">
-                <path d="M50 20c-8 0-15 7-15 15s7 15 15 15 15-7 15-15-7-15-15-15zm0 25c-5.5 0-10-4.5-10-10s4.5-10 10-10 10 4.5 10 10-4.5 10-10 10z" />
-              </svg>
-            </Box>
 
             <Box
               position="absolute"

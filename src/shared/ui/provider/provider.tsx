@@ -2,7 +2,7 @@
 
 import { ChakraProvider, createSystem, defaultConfig } from "@chakra-ui/react";
 import { ColorModeProvider, type ColorModeProviderProps } from "../color-mode";
-import { Toaster } from "@/components/ui/toaster";
+import { Toaster } from "../toaster";
 
 export function Provider(props: ColorModeProviderProps) {
   const newTheme = createSystem(defaultConfig, {

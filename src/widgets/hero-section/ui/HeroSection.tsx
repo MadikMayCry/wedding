@@ -1,16 +1,6 @@
 "use client";
 
-import {
-  Box,
-  Button,
-  Container,
-  Flex,
-  Heading,
-  HStack,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
-// import { , saintAmour } from "@/app/layout";
+import { Box, Button, Container, Text, VStack } from "@chakra-ui/react";
 
 export default function HeroWedding() {
   const scrollToRsvp = () => {
@@ -32,7 +22,6 @@ export default function HeroWedding() {
       <Box
         id={"cveto4nyi-fon"}
         position={"absolute"}
-        // bgImage={"url(/upl1425.png)"}
         inset={0}
         bgSize="auto"
         bgPos="center"

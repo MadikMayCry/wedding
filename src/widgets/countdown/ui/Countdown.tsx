@@ -21,14 +21,6 @@ interface TimeLeft {
   seconds: number;
 }
 
-function usePrevious<T>(value: T): T | undefined {
-  const ref = useRef<T | null>(null);
-  useEffect(() => {
-    ref.current = value;
-  }, [value]);
-  return ref.current ?? undefined;
-}
-
 function pad2(n: number) {
   return String(n).padStart(2, "0");
 }
@@ -43,11 +35,7 @@ function DigitColumn({ digit }: { digit: number }) {
       h={`${ITEM_H}px`}
       w="auto"
       pos="relative"
-      // borderRadius="md"
-      // border="1px solid"
-      // borderColor="whiteAlpha.200"
       bgGradient="linear(to-b, #whiteAlpha.200, #151922)"
-      // shadow="sm"
     >
       <MotionBox
         initial={{ y: (-digit - 1) * ITEM_H }}
@@ -62,23 +50,6 @@ function DigitColumn({ digit }: { digit: number }) {
           </Flex>
         ))}
       </MotionBox>
-      {/* soft fade masks */}
-      <Box
-        pos="absolute"
-        top={0}
-        insetX={0}
-        h="20%"
-        bgGradient="linear(to-b, #0f1217, transparent)"
-        pointerEvents="none"
-      />
-      <Box
-        pos="absolute"
-        bottom={0}
-        insetX={0}
-        h="20%"
-        bgGradient="linear(to-t, #151922, transparent)"
-        pointerEvents="none"
-      />
     </Box>
   );
 }
@@ -110,14 +81,16 @@ function CounterCard({ value, label }: { value: number; label: string }) {
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     >
-      <VStack gap={1} p={3} minW="56px" borderRadius="lg" bg="white">
+      <VStack
+        gap={1}
+        p={3}
+        minW="56px"
+        borderRadius="lg"
+        border={"1px solid"}
+        borderColor="gray.200"
+      >
         <RollingNumber value={value} />
-        <Text
-          fontSize="xs"
-          color="cyan.600"
-          textTransform="uppercase"
-          letterSpacing="wide"
-        >
+        <Text fontSize="xs" textTransform="uppercase" letterSpacing="wide">
           {label}
         </Text>
       </VStack>
@@ -156,20 +129,14 @@ export default function Countdown() {
   }, []);
 
   return (
-    <Box py={12} bg="pink.50">
+    <Box py={12}>
       <Container maxW="container.xl">
         <VStack gap={12}>
           <Heading as="h2" size="xl" textAlign="center" color="gray.800">
             Обратный Отсчет
           </Heading>
 
-          <HStack
-            gap={4}
-            flexWrap="nowrap"
-            justify="center"
-            w="full"
-            // overflowX="auto"
-          >
+          <HStack gap={3} flexWrap="nowrap" justify="center" w="full">
             <CounterCard value={timeLeft.days} label="Дней" />
             <CounterCard value={timeLeft.hours} label="Часов" />
             <CounterCard value={timeLeft.minutes} label="Минут" />

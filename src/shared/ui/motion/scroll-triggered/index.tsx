@@ -1,20 +1,8 @@
 "use client";
 
 import * as motion from "motion/react-client";
-import type { Variants } from "motion/react";
-import { Box, Flex, BoxProps } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import Image from "next/image";
-
-const gradients: string[] = [
-  "linear-gradient(306deg, #fdf2f8, #fce7f3)",
-  "linear-gradient(306deg, #fef7ee, #fdf4f1)",
-  "linear-gradient(306deg, #fdf4ff, #f0f9ff)",
-  "linear-gradient(306deg, #f0fdf4, #f0f9ff)",
-  "linear-gradient(306deg, #fefce8, #fef3c7)",
-  "linear-gradient(306deg, #fdf2f8, #f0f9ff)",
-  "linear-gradient(306deg, #fef7ee, #fdf4ff)",
-  "linear-gradient(306deg, #f0fdf4, #fdf2f8)",
-];
 
 const imageFilterStyle: React.CSSProperties = {
   filter: "saturate(0.9) brightness(1.08) contrast(0.92)",
@@ -31,11 +19,11 @@ const photos = [
 
 export default function ScrollTriggered() {
   return (
-    <Container overflow="hidden">
+    <Box m="0 auto" w="full" pb={"180px"} overflow={"hidden"}>
       {photos.map((photo, i) => (
         <Card i={i} photo={photo} key={photo.src} />
       ))}
-    </Container>
+    </Box>
   );
 }
 
@@ -45,8 +33,6 @@ interface CardProps {
 }
 
 function Card({ photo, i }: CardProps) {
-  const background = gradients[i % gradients.length];
-
   const directions = [
     { x: -100, y: 0, rotate: -6 },
     { x: 100, y: 0, rotate: 6 },
@@ -77,15 +63,6 @@ function Card({ photo, i }: CardProps) {
         pt={5}
         mb="-120px"
       >
-        {/*<Box*/}
-        {/*  inset={0}*/}
-        {/*  position="absolute"*/}
-        {/*  css={{*/}
-        {/*    background,*/}
-        {/*    clipPath: `path("M 0 303.5 C 0 292.454 8.995 285.101 20 283.5 L 460 219.5 C 470.085 218.033 480 228.454 480 239.5 L 500 430 C 500 441.046 491.046 450 480 450 L 20 450 C 8.954 450 0 441.046 0 430 Z")`,*/}
-        {/*  }}*/}
-        {/*/>*/}
-
         <motion.div
           whileHover={{ scale: 1.03, rotate: settleRotate * 0.9 }}
           transition={{ type: "spring", stiffness: 260, damping: 20 }}
@@ -135,16 +112,5 @@ function Card({ photo, i }: CardProps) {
         </motion.div>
       </Flex>
     </motion.div>
-  );
-}
-
-export function Container({
-  children,
-  ...props
-}: { children: React.ReactNode } & BoxProps) {
-  return (
-    <Box m="0 auto" w="full" mb={"80px"} {...props}>
-      {children}
-    </Box>
   );
 }

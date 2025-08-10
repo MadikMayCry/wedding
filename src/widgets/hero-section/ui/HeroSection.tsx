@@ -29,7 +29,7 @@ export default function HeroWedding() {
       />
 
       {/* Основной контент */}
-      <Container maxW="container.xl" zIndex={1}>
+      <Container maxW="full" zIndex={1}>
         <VStack gap={12} py={20}>
           {/* Заголовок с именами */}
           <VStack gap={6}>

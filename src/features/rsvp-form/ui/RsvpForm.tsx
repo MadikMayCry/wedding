@@ -72,7 +72,7 @@ export function RsvpForm() {
   };
 
   return (
-    <Box py={20} id="rsvp">
+    <Box py={10} id="rsvp">
       <Container maxW="container.xl">
         <VStack gap={8}>
           <Heading as="h2" size="xl" textAlign="center" color="gray.800">

@@ -10,6 +10,18 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ["@chakra-ui/react"],
     useCache: true,
   },
+  images: {
+    remotePatterns: [
+      // new URL(`https://images.unsplash.com`),
+
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+        port: "",
+        pathname: "/**",
+      },
+    ],
+  },
   webpack(config, { dev }) {
     if (dev) {
       config.devtool = false;

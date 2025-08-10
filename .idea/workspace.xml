@@ -5,14 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e765169-c360-4b22-9a63-92d68b7b65ff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/_page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/TestForm.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/lib/create-post.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/lib/supabase.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/fonts/FontsFree-Net-saint-amour-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/new-countdown.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/_page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Countdown.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Countdown.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Gallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Gallery.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/RSVPForm.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TestForm.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/motion/scroll-triggered/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/motion/scroll-triggered/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +44,7 @@
     "git-widget-placeholder": "main",
     "js.debugger.nextJs.config.created.client": "true",
     "js.debugger.nextJs.config.created.server": "true",
-    "last_opened_file_path": "/Users/madikmaycry/Desktop/dev/demos/create-next-app/src/components",
+    "last_opened_file_path": "/Users/madikmaycry/Desktop/dev/demos/create-next-app/public/fonts",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -54,10 +60,12 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/fonts" />
       <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/fonts" />
       <recent name="$PROJECT_DIR$/src/components/lib" />
     </key>
   </component>
@@ -96,7 +104,8 @@
       <workItem from="1743586774378" duration="781000" />
       <workItem from="1754556248696" duration="1170000" />
       <workItem from="1754558227043" duration="5619000" />
-      <workItem from="1754666560146" duration="3358000" />
+      <workItem from="1754666560146" duration="7002000" />
+      <workItem from="1754734099516" duration="28070000" />
     </task>
     <servers />
   </component>

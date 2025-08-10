@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   Box,
   Container,
@@ -8,9 +8,9 @@ import {
   VStack,
   HStack,
   Text,
+  Flex,
 } from "@chakra-ui/react";
 import { motion } from "motion/react";
-import ScrollTriggered from "@/components/motion/scroll-triggered";
 
 const MotionBox = motion.create(Box);
 
@@ -19,6 +19,110 @@ interface TimeLeft {
   hours: number;
   minutes: number;
   seconds: number;
+}
+
+function usePrevious<T>(value: T): T | undefined {
+  const ref = useRef<T | null>(null);
+  useEffect(() => {
+    ref.current = value;
+  }, [value]);
+  return ref.current ?? undefined;
+}
+
+function pad2(n: number) {
+  return String(n).padStart(2, "0");
+}
+
+const digits = Array.from({ length: 10 }, (_, i) => i);
+
+function DigitColumn({ digit }: { digit: number }) {
+  const ITEM_H = 56; // px per digit (smaller)
+  return (
+    <Box
+      overflow="hidden"
+      h={`${ITEM_H}px`}
+      w="auto"
+      pos="relative"
+      // borderRadius="md"
+      // border="1px solid"
+      // borderColor="whiteAlpha.200"
+      bgGradient="linear(to-b, #whiteAlpha.200, #151922)"
+      // shadow="sm"
+    >
+      <MotionBox
+        initial={{ y: (-digit - 1) * ITEM_H }}
+        animate={{ y: -digit * ITEM_H }}
+        transition={{ type: "spring", stiffness: 400, damping: 30 }}
+      >
+        {digits.map((d) => (
+          <Flex key={d} h={`${ITEM_H}px`} align="center" justify="center">
+            <Text fontSize="4xl" color="red.300">
+              {d}
+            </Text>
+          </Flex>
+        ))}
+      </MotionBox>
+      {/* soft fade masks */}
+      <Box
+        pos="absolute"
+        top={0}
+        insetX={0}
+        h="20%"
+        bgGradient="linear(to-b, #0f1217, transparent)"
+        pointerEvents="none"
+      />
+      <Box
+        pos="absolute"
+        bottom={0}
+        insetX={0}
+        h="20%"
+        bgGradient="linear(to-t, #151922, transparent)"
+        pointerEvents="none"
+      />
+    </Box>
+  );
+}
+
+function RollingNumber({ value }: { value: number }) {
+  const str = pad2(value);
+  return (
+    <HStack gap={2}>
+      {Array.from(str).map((ch, idx) => (
+        <Box key={`${idx}-${ch}`}>
+          {/[0-9]/.test(ch) ? (
+            <DigitColumn digit={Number(ch)} />
+          ) : (
+            <Text fontSize="4xl" color="white">
+              {ch}
+            </Text>
+          )}
+        </Box>
+      ))}
+    </HStack>
+  );
+}
+
+function CounterCard({ value, label }: { value: number; label: string }) {
+  return (
+    <MotionBox
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+    >
+      <VStack gap={1} p={3} minW="56px" borderRadius="lg" bg="white">
+        <RollingNumber value={value} />
+        <Text
+          fontSize="xs"
+          color="cyan.600"
+          textTransform="uppercase"
+          letterSpacing="wide"
+        >
+          {label}
+        </Text>
+      </VStack>
+    </MotionBox>
+  );
 }
 
 export default function Countdown() {
@@ -30,7 +134,7 @@ export default function Countdown() {
   });
 
   useEffect(() => {
-    const weddingDate = new Date("2024-06-15T16:00:00").getTime();
+    const weddingDate = new Date("2025-09-13T17:00:00").getTime();
 
     const timer = setInterval(() => {
       const now = new Date().getTime();
@@ -52,106 +156,24 @@ export default function Countdown() {
   }, []);
 
   return (
-    <Box py={20} bg="pink.50">
+    <Box py={12} bg="pink.50">
       <Container maxW="container.xl">
-        <ScrollTriggered />
         <VStack gap={12}>
           <Heading as="h2" size="xl" textAlign="center" color="gray.800">
             Обратный Отсчет
           </Heading>
 
-          <HStack gap={8} flexWrap="wrap" justify="center">
-            <MotionBox
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              viewport={{ once: true }}
-            >
-              <VStack
-                gap={2}
-                bg="white"
-                p={6}
-                borderRadius="lg"
-                shadow="md"
-                minW="120px"
-              >
-                <Text fontSize="4xl" fontWeight="bold" color="pink.500">
-                  {timeLeft.days}
-                </Text>
-                <Text fontSize="sm" color="gray.600" textTransform="uppercase">
-                  Дней
-                </Text>
-              </VStack>
-            </MotionBox>
-
-            <MotionBox
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <VStack
-                gap={2}
-                bg="white"
-                p={6}
-                borderRadius="lg"
-                shadow="md"
-                minW="120px"
-              >
-                <Text fontSize="4xl" fontWeight="bold" color="pink.500">
-                  {timeLeft.hours}
-                </Text>
-                <Text fontSize="sm" color="gray.600" textTransform="uppercase">
-                  Часов
-                </Text>
-              </VStack>
-            </MotionBox>
-
-            <MotionBox
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ once: true }}
-            >
-              <VStack
-                gap={2}
-                bg="white"
-                p={6}
-                borderRadius="lg"
-                shadow="md"
-                minW="120px"
-              >
-                <Text fontSize="4xl" fontWeight="bold" color="pink.500">
-                  {timeLeft.minutes}
-                </Text>
-                <Text fontSize="sm" color="gray.600" textTransform="uppercase">
-                  Минут
-                </Text>
-              </VStack>
-            </MotionBox>
-
-            <MotionBox
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
-              <VStack
-                gap={2}
-                bg="white"
-                p={6}
-                borderRadius="lg"
-                shadow="md"
-                minW="120px"
-              >
-                <Text fontSize="4xl" fontWeight="bold" color="pink.500">
-                  {timeLeft.seconds}
-                </Text>
-                <Text fontSize="sm" color="gray.600" textTransform="uppercase">
-                  Секунд
-                </Text>
-              </VStack>
-            </MotionBox>
+          <HStack
+            gap={4}
+            flexWrap="nowrap"
+            justify="center"
+            w="full"
+            // overflowX="auto"
+          >
+            <CounterCard value={timeLeft.days} label="Дней" />
+            <CounterCard value={timeLeft.hours} label="Часов" />
+            <CounterCard value={timeLeft.minutes} label="Минут" />
+            <CounterCard value={timeLeft.seconds} label="Секунд" />
           </HStack>
         </VStack>
       </Container>

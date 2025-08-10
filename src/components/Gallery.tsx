@@ -1,13 +1,7 @@
 "use client";
 
-import {
-  Box,
-  Container,
-  Heading,
-  SimpleGrid,
-  Image,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, Container, Heading, SimpleGrid, VStack } from "@chakra-ui/react";
+import Image from "next/image";
 import { motion } from "motion/react";
 import ScrollTriggered from "@/components/motion/scroll-triggered";
 
@@ -50,7 +44,6 @@ export default function Gallery() {
   return (
     <Box py={20} bg="white">
       <Container maxW="container.xl">
-        <ScrollTriggered />
         <VStack gap={12}>
           <Heading as="h2" size="xl" textAlign="center" color="gray.800">
             Галерея
@@ -65,17 +58,23 @@ export default function Gallery() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Image
-                  src={photo.src}
-                  alt={photo.alt}
+                <Box
                   borderRadius="lg"
                   shadow="md"
-                  w="full"
-                  h="300px"
-                  objectFit="cover"
+                  boxSize={"full"}
+                  height={"300px"}
+                  position={"relative"}
                   _hover={{ transform: "scale(1.05)", shadow: "xl" }}
                   transition="all 0.3s"
-                />
+                >
+                  <Image
+                    quality={25}
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    objectFit="cover"
+                  />
+                </Box>
               </MotionBox>
             ))}
           </SimpleGrid>

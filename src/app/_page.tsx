@@ -21,7 +21,6 @@ import {
 import { EnterAnimation } from "@/components/motion/enter";
 import ScrollTriggered from "@/components/motion/scroll-triggered";
 import Gallery from "@/components/Gallery";
-import RSVPForm from "@/components/RSVPForm";
 import Countdown from "@/components/Countdown";
 
 const MotionBox = motion.create(Box);
@@ -191,7 +190,7 @@ export default function Home() {
       <Gallery />
 
       {/* RSVP Section */}
-      <RSVPForm />
+      {/*<RSVPForm />*/}
 
       {/* Contact Section */}
       <Box py={20} bg="gray.50">

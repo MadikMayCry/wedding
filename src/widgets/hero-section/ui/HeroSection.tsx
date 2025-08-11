@@ -1,6 +1,8 @@
 "use client";
 
 import { Box, Button, Container, Text, VStack } from "@chakra-ui/react";
+import Image from "next/image";
+import Head from "next/head";
 
 export default function HeroWedding() {
   const scrollToRsvp = () => {
@@ -16,28 +18,59 @@ export default function HeroWedding() {
       alignItems="center"
       justifyContent="center"
       textAlign="center"
-      bgGradient="linear(to-b, pink.50, white)"
       overflow="hidden"
+      // fontFamily={"miama"}
+      transition={"all ease-in"}
     >
+      {/* Фоновое изображение */}
+      {/*<Head>*/}
+      {/*  <link*/}
+      {/*    rel="preload"*/}
+      {/*    as="image"*/}
+      {/*    href="https://images.unsplash.com/photo-1502635385003-ee1e6a1a742d?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0"*/}
+      {/*  />*/}
+      {/*</Head>*/}
       <Box
-        id={"cveto4nyi-fon"}
-        position={"absolute"}
-        inset={0}
-        bgSize="auto"
-        bgPos="center"
-        bgRepeat="no-repeat"
+        position="absolute"
+        top="0"
+        left="0"
+        w="full"
+        h="full"
+        backgroundSize="cover"
+        backgroundPosition="center"
+        backgroundRepeat="no-repeat"
+        asChild
+      >
+        <Image
+          src="https://images.unsplash.com/photo-1502635385003-ee1e6a1a742d?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Background"
+          fill
+          priority
+          style={{ objectFit: "cover" }}
+        />
+      </Box>
+
+      {/* Затемнение для лучшей читаемости текста */}
+      <Box
+        position="absolute"
+        top="0"
+        left="0"
+        w="full"
+        h="full"
+        bg={"rgb(27 20 13 / 30%)"}
       />
 
       {/* Основной контент */}
-      <Container maxW="full" zIndex={1}>
+      <Container maxW="full" zIndex={10} position="relative">
         <VStack gap={12} py={20}>
           {/* Заголовок с именами */}
           <VStack gap={6}>
             <Box
-              fontFamily={"saintAmour"}
-              color="gray.800"
+              color="white"
               fontSize={"114px"}
               lineHeight={"100%"}
+              textShadow="0 0 30px rgba(0,0,0,0.8), 0 0 60px rgba(255,255,255,0.3)"
+              fontFamily={"saintAmour"}
             >
               <Text>Мадияр</Text>
               <Text>Мафтуна</Text>
@@ -45,16 +78,22 @@ export default function HeroWedding() {
           </VStack>
 
           {/* Дата и место */}
-          <VStack gap={2} maxW="2xl" fontFamily={"fantasy"}>
+          <VStack gap={2} maxW="2xl">
             <Text
               fontSize={{ base: "xl", md: "2xl" }}
-              color="gray.700"
+              color="white"
               fontWeight="medium"
+              textShadow="0 2px 10px rgba(0,0,0,0.8)"
             >
               13.09.2025 17:00
             </Text>
 
-            <Text fontSize={{ base: "lg", md: "xl" }} color="gray.600">
+            <Text
+              fontSize={{ base: "xl", md: "xl" }}
+              color="white"
+              textShadow="0 2px 10px rgba(0,0,0,0.8)"
+              // fontFamily={"miama"}
+            >
               Ресторан "Сары Арка", Семей
             </Text>
           </VStack>
@@ -62,6 +101,7 @@ export default function HeroWedding() {
           {/* CTA кнопки */}
           <VStack gap={6} pt={8}>
             <Button
+              variant="outline"
               size="lg"
               px={12}
               py={6}
@@ -79,8 +119,9 @@ export default function HeroWedding() {
               }}
               transition="all 0.3s"
               onClick={scrollToRsvp}
+              fontFamily={"inter"}
             >
-              Подтвердить присутствие
+              Заполнить форму
             </Button>
           </VStack>
         </VStack>

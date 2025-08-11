@@ -18,6 +18,13 @@ const saintAmour = localFont({
   display: "swap",
 });
 
+// @ts-ignore
+const miama = localFont({
+  src: "./fonts/miama.otf",
+  variable: "--font-miama",
+  display: "swap",
+});
+
 export default function RootLayout({
   children,
 }: {
@@ -26,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="ru" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${inter.className} ${saintAmour.variable}`}
+        className={`${inter.variable} ${inter.className} ${saintAmour.variable} ${miama.variable}`}
       >
         <Provider>
           <Box as="main" minH="100vh">

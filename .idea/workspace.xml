@@ -7,7 +7,8 @@
     <list default="true" id="3e765169-c360-4b22-9a63-92d68b7b65ff" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/ui/motion/scroll-triggered/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/motion/scroll-triggered/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/widgets/event-details/ui/EventDetails.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/event-details/ui/EventDetails.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/widgets/hero-section/ui/HeroSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/hero-section/ui/HeroSection.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -96,6 +97,8 @@
       <workItem from="1754558227043" duration="5619000" />
       <workItem from="1754666560146" duration="7002000" />
       <workItem from="1754734099516" duration="28070000" />
+      <workItem from="1754885389867" duration="34000" />
+      <workItem from="1754982762317" duration="909000" />
     </task>
     <servers />
   </component>

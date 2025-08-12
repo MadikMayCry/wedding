@@ -19,7 +19,7 @@ export default function HeroWedding() {
       justifyContent="center"
       textAlign="center"
       overflow="hidden"
-      // fontFamily={"miama"}
+      fontFamily={"miama"}
       transition={"all ease-in"}
     >
       {/* Фоновое изображение */}
@@ -92,7 +92,6 @@ export default function HeroWedding() {
               fontSize={{ base: "xl", md: "xl" }}
               color="white"
               textShadow="0 2px 10px rgba(0,0,0,0.8)"
-              // fontFamily={"miama"}
             >
               Ресторан "Сары Арка", Семей
             </Text>
@@ -119,7 +118,7 @@ export default function HeroWedding() {
               }}
               transition="all 0.3s"
               onClick={scrollToRsvp}
-              fontFamily={"inter"}
+              // fontFamily={"inter"}
             >
               Заполнить форму
             </Button>

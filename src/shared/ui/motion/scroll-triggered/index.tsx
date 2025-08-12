@@ -13,6 +13,10 @@ const photos = [
     src: "/11zon_compressed/455303D9-4AFE-47B9-A399-60C502215EB1_2_11zon.jpg",
     alt: "photo 2",
   },
+  {
+    src: "/11zon_compressed/IMG_1585.JPG",
+    alt: "photo 3",
+  },
   { src: "/11zon_compressed/IMG_3074_6_11zon.jpg", alt: "photo 5" },
   { src: "/11zon_compressed/IMG_3682_12_11zon.jpg", alt: "photo 10" },
 ];

@@ -10,6 +10,9 @@ export const rsvpSchema = z.object({
     .int("Только целые числа")
     .min(1, "Минимум 1")
     .max(9, "Максимум 9"),
+  guest_side: z.string().refine((val) => val === "groom" || val === "bride", {
+    message: "Выберите сторону (жених или невеста)",
+  }),
 });
 
 export type RsvpFormValues = z.infer<typeof rsvpSchema>;
@@ -18,4 +21,5 @@ export const rsvpDefaultValues: Partial<RsvpFormValues> = {
   fullname: "",
   phone_number: "",
   guests: undefined,
+  guest_side: "",
 };

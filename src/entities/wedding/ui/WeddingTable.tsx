@@ -108,6 +108,9 @@ export function WeddingTable({ data, isLoading = false }: WeddingTableProps) {
                   Гости
                 </Table.ColumnHeader>
                 <Table.ColumnHeader fontSize={{ base: "xs", md: "sm" }}>
+                  Сторона
+                </Table.ColumnHeader>
+                <Table.ColumnHeader fontSize={{ base: "xs", md: "sm" }}>
                   Телефон
                 </Table.ColumnHeader>
                 <Table.ColumnHeader fontSize={{ base: "xs", md: "sm" }}>
@@ -128,11 +131,23 @@ export function WeddingTable({ data, isLoading = false }: WeddingTableProps) {
                   </Table.Cell>
                   <Table.Cell>
                     <Badge
-                      colorScheme={item.guests > 2 ? "green" : "blue"}
-                      variant="subtle"
+                      
                       size={isMobile ? "sm" : "md"}
                     >
                       {item.guests}
+                    </Badge>
+                  </Table.Cell>
+                  <Table.Cell>
+                    <Badge
+                      colorPalette={
+                        !item.guest_side ? 'gray' : 
+                        item.guest_side === 'groom' ? 'blue' : 'pink'
+                      }
+                      variant="subtle"
+                      size={isMobile ? "sm" : "md"}
+                    >
+                      {!item.guest_side ? 'Не выбрано' : 
+                       item.guest_side === 'groom' ? 'Жених' : 'Невеста'}
                     </Badge>
                   </Table.Cell>
                   <Table.Cell>

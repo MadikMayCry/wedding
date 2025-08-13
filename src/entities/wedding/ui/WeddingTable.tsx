@@ -129,25 +129,24 @@ export function WeddingTable({ data, isLoading = false }: WeddingTableProps) {
                       {item.fullname}
                     </Text>
                   </Table.Cell>
-                  <Table.Cell>
-                    <Badge
-                      
-                      size={isMobile ? "sm" : "md"}
-                    >
-                      {item.guests}
-                    </Badge>
-                  </Table.Cell>
+                  <Table.Cell>{item.guests}</Table.Cell>
                   <Table.Cell>
                     <Badge
                       colorPalette={
-                        !item.guest_side ? 'gray' : 
-                        item.guest_side === 'groom' ? 'blue' : 'pink'
+                        !item.guest_side
+                          ? "gray"
+                          : item.guest_side === "groom"
+                            ? "blue"
+                            : "pink"
                       }
                       variant="subtle"
                       size={isMobile ? "sm" : "md"}
                     >
-                      {!item.guest_side ? 'Не выбрано' : 
-                       item.guest_side === 'groom' ? 'Жених' : 'Невеста'}
+                      {!item.guest_side
+                        ? "Не выбрано"
+                        : item.guest_side === "groom"
+                          ? "Жених"
+                          : "Невеста"}
                     </Badge>
                   </Table.Cell>
                   <Table.Cell>

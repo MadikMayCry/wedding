@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3e765169-c360-4b22-9a63-92d68b7b65ff" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/rsvp/model/schema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/rsvp/model/schema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/rsvp/ui/RsvpFields.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/rsvp/ui/RsvpFields.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/wedding/model/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/wedding/model/types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/wedding/ui/WeddingTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/wedding/ui/WeddingTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/lib/create-post.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/lib/create-post.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +97,9 @@
       <workItem from="1754734099516" duration="28070000" />
       <workItem from="1754885389867" duration="34000" />
       <workItem from="1754982762317" duration="1450000" />
-      <workItem from="1755099288920" duration="5514000" />
+      <workItem from="1755099288920" duration="6404000" />
+      <workItem from="1755107073581" duration="2000" />
+      <workItem from="1755107938461" duration="1197000" />
     </task>
     <servers />
   </component>

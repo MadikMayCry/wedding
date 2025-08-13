@@ -2,7 +2,6 @@
 
 import { Box, Button, Container, Text, VStack } from "@chakra-ui/react";
 import Image from "next/image";
-import Head from "next/head";
 
 export default function HeroWedding() {
   const scrollToRsvp = () => {
@@ -22,14 +21,6 @@ export default function HeroWedding() {
       fontFamily={"miama"}
       transition={"all ease-in"}
     >
-      {/* Фоновое изображение */}
-      {/*<Head>*/}
-      {/*  <link*/}
-      {/*    rel="preload"*/}
-      {/*    as="image"*/}
-      {/*    href="https://images.unsplash.com/photo-1502635385003-ee1e6a1a742d?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0"*/}
-      {/*  />*/}
-      {/*</Head>*/}
       <Box
         position="absolute"
         top="0"

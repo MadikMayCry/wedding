@@ -81,14 +81,7 @@ function CounterCard({ value, label }: { value: number; label: string }) {
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     >
-      <VStack
-        gap={1}
-        p={3}
-        minW="56px"
-        borderRadius="lg"
-        border={"1px solid"}
-        borderColor="gray.200"
-      >
+      <VStack gap={1} p={3} minW="56px" borderRadius="lg" bg="gray.50">
         <RollingNumber value={value} />
         <Text fontSize="xs" textTransform="uppercase" letterSpacing="wide">
           {label}

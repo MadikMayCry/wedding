@@ -1,13 +1,8 @@
-"use client";
-
-import { Box, Button, Container, Text, VStack } from "@chakra-ui/react";
+import { Box, Container, Text, VStack } from "@chakra-ui/react";
 import Image from "next/image";
+import { CTA } from "@/widgets/hero-section/ui/CTA";
 
 export default function HeroWedding() {
-  const scrollToRsvp = () => {
-    document?.getElementById("rsvp")?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <Box
       position="relative"
@@ -87,33 +82,7 @@ export default function HeroWedding() {
               Ресторан "Сары Арка", Семей
             </Text>
           </VStack>
-
-          {/* CTA кнопки */}
-          <VStack gap={6} pt={8}>
-            <Button
-              variant="outline"
-              size="lg"
-              px={12}
-              py={6}
-              fontSize="lg"
-              fontWeight="semibold"
-              bgGradient="linear(to-r, pink.400, rose.400)"
-              color="white"
-              _hover={{
-                bgGradient: "linear(to-r, pink.500, rose.500)",
-                transform: "translateY(-2px)",
-                shadow: "xl",
-              }}
-              _active={{
-                transform: "translateY(0)",
-              }}
-              transition="all 0.3s"
-              onClick={scrollToRsvp}
-              // fontFamily={"inter"}
-            >
-              Заполнить форму
-            </Button>
-          </VStack>
+          <CTA />
         </VStack>
       </Container>
     </Box>

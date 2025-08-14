@@ -1,15 +1,7 @@
 import { Provider } from "@/shared/ui/provider";
 import { Box } from "@chakra-ui/react";
-import { Inter, Cormorant_Garamond } from "next/font/google";
+import { Cormorant_Garamond } from "next/font/google";
 import localFont from "next/font/local";
-
-const inter = Inter({
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
-  style: ["normal", "italic"],
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
-});
 
 const cormorant = Cormorant_Garamond({
   weight: ["300", "400", "500", "600", "700"],
@@ -41,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="ru" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${saintAmour.variable} ${miama.variable} ${cormorant.variable} ${cormorant.className}`}
+        className={`${saintAmour.variable} ${miama.variable} ${cormorant.variable} ${cormorant.className}`}
       >
         <Provider>
           <Box as="main" minH="100vh" fontFamily={"cormorant"}>

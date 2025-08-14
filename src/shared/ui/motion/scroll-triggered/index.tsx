@@ -23,7 +23,13 @@ const photos = [
 
 export default function ScrollTriggered() {
   return (
-    <Box m="0 auto" w="full" pb={"180px"} overflow={"hidden"}>
+    <Box
+      m="0 auto"
+      w="full"
+      pt={{ base: "0", md: 12 }}
+      pb={"180px"}
+      overflow={"hidden"}
+    >
       {photos.map((photo, i) => (
         <Card i={i} photo={photo} key={photo.src} />
       ))}
@@ -36,13 +42,14 @@ interface CardProps {
   i: number;
 }
 
+const directions = [
+  { x: -100, y: 0, rotate: -6 },
+  { x: 100, y: 0, rotate: 6 },
+  { x: -80, y: 120, rotate: -3 },
+  { x: 80, y: -120, rotate: 3 },
+];
+
 function Card({ photo, i }: CardProps) {
-  const directions = [
-    { x: -100, y: 0, rotate: -6 },
-    { x: 100, y: 0, rotate: 6 },
-    { x: -80, y: 120, rotate: -3 },
-    { x: 80, y: -120, rotate: 3 },
-  ];
   const dir = directions[i % directions.length];
   const settleRotate = dir.rotate * 0.6;
 
@@ -57,7 +64,7 @@ function Card({ photo, i }: CardProps) {
         filter: "blur(0px)",
       }}
       viewport={{ once: true }}
-      transition={{ type: "spring", bounce: 0.35, duration: 0.9 }}
+      transition={{ type: "spring", delay: 0.3, bounce: 0.35, duration: 0.9 }}
     >
       <Flex
         overflow="hidden"
@@ -67,53 +74,53 @@ function Card({ photo, i }: CardProps) {
         pt={5}
         mb="-120px"
       >
-        <motion.div
-          whileHover={{ scale: 1.03, rotate: settleRotate * 0.9 }}
-          transition={{ type: "spring", stiffness: 260, damping: 20 }}
+        {/*<motion.div*/}
+        {/*  whileHover={{ scale: 1.03, rotate: settleRotate * 0.9 }}*/}
+        {/*  transition={{ type: "spring", stiffness: 260, damping: 20 }}*/}
+        {/*>*/}
+        <Box
+          borderRadius="xl"
+          shadow="xl"
+          boxSize={"full"}
+          height={{ base: "425px", md: "525px" }}
+          position={"relative"}
+          overflow="hidden"
+          border="2px solid"
+          borderColor="pink.100"
+          transition="all 0.3s"
+          maxW="70vw"
+          _hover={{
+            borderColor: "pink.200",
+            shadow: "2xl",
+          }}
         >
+          <Image
+            quality={45}
+            src={photo.src}
+            alt={photo.alt}
+            fill
+            objectFit="cover"
+            style={imageFilterStyle}
+          />
+
+          {/* Нежный оверлей */}
           <Box
+            position="absolute"
+            inset={0}
+            bgGradient="linear(to-br, pink.50, transparent)"
+            opacity={0.3}
+            pointerEvents="none"
+          />
+
+          <Box
+            position="absolute"
+            inset={0}
             borderRadius="xl"
-            shadow="xl"
-            boxSize={"full"}
-            height={"425px"}
-            position={"relative"}
-            overflow="hidden"
-            border="2px solid"
-            borderColor="pink.100"
-            transition="all 0.3s"
-            minW="70vw"
-            _hover={{
-              borderColor: "pink.200",
-              shadow: "2xl",
-            }}
-          >
-            <Image
-              quality={25}
-              src={photo.src}
-              alt={photo.alt}
-              fill
-              objectFit="cover"
-              style={imageFilterStyle}
-            />
-
-            {/* Нежный оверлей */}
-            <Box
-              position="absolute"
-              inset={0}
-              bgGradient="linear(to-br, pink.50, transparent)"
-              opacity={0.3}
-              pointerEvents="none"
-            />
-
-            <Box
-              position="absolute"
-              inset={0}
-              borderRadius="xl"
-              boxShadow="inset 0 0 0 1px rgba(236,72,153,0.1)"
-              pointerEvents="none"
-            />
-          </Box>
-        </motion.div>
+            boxShadow="inset 0 0 0 1px rgba(236,72,153,0.1)"
+            pointerEvents="none"
+          />
+        </Box>
+        {/*</motion.div>*/}
       </Flex>
     </motion.div>
   );

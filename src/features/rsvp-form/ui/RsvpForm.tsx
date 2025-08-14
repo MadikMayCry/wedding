@@ -63,10 +63,19 @@ export function RsvpForm() {
       setCookie("formSubmitted", "true", 365);
       reset();
     } catch (error) {
-      console.error(error);
+      console.error("Ошибка отправки формы:", error);
+      
+      let errorMessage = "Не удалось отправить заявку";
+      
+      if (error instanceof Error) {
+        errorMessage = error.message;
+      } else if (typeof error === 'object' && error !== null && 'message' in error) {
+        errorMessage = String(error.message);
+      }
+      
       toaster.error({
-        title: "Не удалось отправить заявку",
-        description: error instanceof Error ? error.message : undefined,
+        title: "Ошибка",
+        description: errorMessage,
       });
     }
   };

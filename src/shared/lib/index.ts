@@ -1,3 +1,3 @@
 export { mergeRefs } from "./react/merge-refs";
 export { supabase } from "./supabase";
-export { addItem } from "./create-post";
+export { addItem, checkPhoneNumber, updateItem } from "./create-post";

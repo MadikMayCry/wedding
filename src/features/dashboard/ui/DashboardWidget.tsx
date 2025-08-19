@@ -39,10 +39,8 @@ export function DashboardWidget() {
 
       const { data: weddingData, error: fetchError } = await supabase
         .from("wedding")
-        .select("*");
-      // .order("created_at", { ascending: false });
-
-      console.log("weddingData-->", weddingData);
+        .select("*")
+        .order("created_at", { ascending: false });
 
       if (fetchError) {
         throw fetchError;
@@ -97,8 +95,8 @@ export function DashboardWidget() {
         <VStack gap={6} align="stretch">
           {/* Заголовок */}
           <Box textAlign="center" py={4}>
-            <Heading 
-              size={{ base: "xl", md: "2xl" }} 
+            <Heading
+              size={{ base: "xl", md: "2xl" }}
               color={useColorModeValue("gray.800", "white")}
               mb={2}
             >
@@ -113,9 +111,9 @@ export function DashboardWidget() {
           </Box>
 
           {/* Статистика - в одну строку для мобильных */}
-          <HStack 
-            gap={{ base: 2, md: 4 }} 
-            justify="space-between" 
+          <HStack
+            gap={{ base: 2, md: 4 }}
+            justify="space-between"
             flexWrap="nowrap"
             overflowX="auto"
             pb={2}
@@ -134,7 +132,11 @@ export function DashboardWidget() {
               <Text fontSize={{ base: "xs", md: "sm" }} color="gray.600" mb={1}>
                 Ответы
               </Text>
-              <Text fontSize={{ base: "xl", md: "2xl" }} fontWeight="bold" color="blue.500">
+              <Text
+                fontSize={{ base: "xl", md: "2xl" }}
+                fontWeight="bold"
+                color="blue.500"
+              >
                 {stats.totalResponses}
               </Text>
             </Box>
@@ -153,7 +155,11 @@ export function DashboardWidget() {
               <Text fontSize={{ base: "xs", md: "sm" }} color="gray.600" mb={1}>
                 Гости
               </Text>
-              <Text fontSize={{ base: "xl", md: "2xl" }} fontWeight="bold" color="green.500">
+              <Text
+                fontSize={{ base: "xl", md: "2xl" }}
+                fontWeight="bold"
+                color="green.500"
+              >
                 {stats.totalGuests}
               </Text>
             </Box>
@@ -172,7 +178,11 @@ export function DashboardWidget() {
               <Text fontSize={{ base: "xs", md: "sm" }} color="gray.600" mb={1}>
                 Среднее
               </Text>
-              <Text fontSize={{ base: "xl", md: "2xl" }} fontWeight="bold" color="purple.500">
+              <Text
+                fontSize={{ base: "xl", md: "2xl" }}
+                fontWeight="bold"
+                color="purple.500"
+              >
                 {stats.averageGuests}
               </Text>
             </Box>
@@ -184,7 +194,7 @@ export function DashboardWidget() {
               <Heading size={{ base: "md", md: "lg" }} mb={2}>
                 Детали ответов
               </Heading>
-              <Text 
+              <Text
                 fontSize={{ base: "xs", md: "sm" }}
                 color={useColorModeValue("gray.600", "gray.300")}
               >
@@ -195,7 +205,9 @@ export function DashboardWidget() {
             {isLoading ? (
               <Box textAlign="center" py={16}>
                 <Spinner size="xl" color="blue.500" />
-                <Text mt={4} fontSize="sm">Загрузка данных...</Text>
+                <Text mt={4} fontSize="sm">
+                  Загрузка данных...
+                </Text>
               </Box>
             ) : (
               <WeddingTable data={data} />

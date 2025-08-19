@@ -4,5 +4,6 @@ export interface WeddingData {
   phone_number?: string;
   guests: number;
   guest_side?: 'groom' | 'bride';
+  commentary?: string;
   created_at: string;
 }

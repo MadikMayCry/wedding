@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e765169-c360-4b22-9a63-92d68b7b65ff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/widgets/hero-section/ui/CTA.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/rsvp-form/ui/RsvpForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/rsvp-form/ui/RsvpForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/wedding/model/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/wedding/model/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/wedding/ui/WeddingTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/wedding/ui/WeddingTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/dashboard/ui/DashboardWidget.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/dashboard/ui/DashboardWidget.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/phone-checker/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/phone-checker/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/shared/lib/create-post.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/lib/create-post.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/shared/lib/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/lib/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/ui/motion/scroll-triggered/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/ui/motion/scroll-triggered/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widgets/hero-section/ui/HeroSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/widgets/hero-section/ui/HeroSection.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +104,8 @@
       <workItem from="1755099288920" duration="6404000" />
       <workItem from="1755107073581" duration="2000" />
       <workItem from="1755107938461" duration="4207000" />
-      <workItem from="1755152424341" duration="484000" />
+      <workItem from="1755152424341" duration="730000" />
+      <workItem from="1755626710503" duration="660000" />
     </task>
     <servers />
   </component>

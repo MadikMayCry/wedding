@@ -22,14 +22,14 @@ interface WeddingTableProps {
   isLoading?: boolean;
 }
 
-type SortField = 'fullname' | 'created_at' | 'guests' | 'guest_side';
-type SortDirection = 'asc' | 'desc';
+type SortField = "fullname" | "created_at" | "guests" | "guest_side";
+type SortDirection = "asc" | "desc";
 
 export function WeddingTable({ data, isLoading = false }: WeddingTableProps) {
   const [searchTerm, setSearchTerm] = useState("");
-  const [sortField, setSortField] = useState<SortField>('created_at');
-  const [sortDirection, setSortDirection] = useState<SortDirection>('desc');
-  
+  const [sortField, setSortField] = useState<SortField>("created_at");
+  const [sortDirection, setSortDirection] = useState<SortDirection>("desc");
+
   const bgColor = useColorModeValue("white", "gray.800");
   const borderColor = useColorModeValue("gray.200", "gray.700");
 
@@ -48,10 +48,10 @@ export function WeddingTable({ data, isLoading = false }: WeddingTableProps) {
   // Функция для изменения сортировки
   const handleSort = (field: SortField) => {
     if (sortField === field) {
-      setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc');
+      setSortDirection(sortDirection === "asc" ? "desc" : "asc");
     } else {
       setSortField(field);
-      setSortDirection('asc');
+      setSortDirection("asc");
     }
   };
 
@@ -60,7 +60,7 @@ export function WeddingTable({ data, isLoading = false }: WeddingTableProps) {
     if (sortField !== field) {
       return "↕️";
     }
-    return sortDirection === 'asc' ? "↑" : "↓";
+    return sortDirection === "asc" ? "↑" : "↓";
   };
 
   // Функция для получения текста подсказки сортировки
@@ -68,7 +68,7 @@ export function WeddingTable({ data, isLoading = false }: WeddingTableProps) {
     if (sortField !== field) {
       return `Сортировать по ${getFieldLabel(field)}`;
     }
-    return sortDirection === 'asc' 
+    return sortDirection === "asc"
       ? `Сортировка по ${getFieldLabel(field)} (по возрастанию)`
       : `Сортировка по ${getFieldLabel(field)} (по убыванию)`;
   };
@@ -76,11 +76,16 @@ export function WeddingTable({ data, isLoading = false }: WeddingTableProps) {
   // Функция для получения человекочитаемых названий полей
   const getFieldLabel = (field: SortField) => {
     switch (field) {
-      case 'fullname': return 'имени';
-      case 'created_at': return 'дате';
-      case 'guests': return 'количеству гостей';
-      case 'guest_side': return 'стороне гостя';
-      default: return field;
+      case "fullname":
+        return "имени";
+      case "created_at":
+        return "дате";
+      case "guests":
+        return "количеству гостей";
+      case "guest_side":
+        return "стороне гостя";
+      default:
+        return field;
     }
   };
 
@@ -91,31 +96,31 @@ export function WeddingTable({ data, isLoading = false }: WeddingTableProps) {
       let bValue: any;
 
       switch (sortField) {
-        case 'fullname':
+        case "fullname":
           aValue = a.fullname.toLowerCase();
           bValue = b.fullname.toLowerCase();
           break;
-        case 'created_at':
+        case "created_at":
           aValue = new Date(a.created_at).getTime();
           bValue = new Date(b.created_at).getTime();
           break;
-        case 'guests':
+        case "guests":
           aValue = a.guests;
           bValue = b.guests;
           break;
-        case 'guest_side':
-          aValue = a.guest_side || '';
-          bValue = b.guest_side || '';
+        case "guest_side":
+          aValue = a.guest_side || "";
+          bValue = b.guest_side || "";
           break;
         default:
           return 0;
       }
 
       if (aValue < bValue) {
-        return sortDirection === 'asc' ? -1 : 1;
+        return sortDirection === "asc" ? -1 : 1;
       }
       if (aValue > bValue) {
-        return sortDirection === 'asc' ? 1 : -1;
+        return sortDirection === "asc" ? 1 : -1;
       }
       return 0;
     });
@@ -124,14 +129,14 @@ export function WeddingTable({ data, isLoading = false }: WeddingTableProps) {
   // Фильтрация и сортировка данных
   const processedData = useMemo(() => {
     let filtered = data;
-    
+
     // Фильтрация по поиску
     if (searchTerm.trim()) {
       filtered = data.filter((item) =>
         item.fullname.toLowerCase().includes(searchTerm.toLowerCase()),
       );
     }
-    
+
     // Сортировка
     return sortData(filtered);
   }, [data, searchTerm, sortField, sortDirection]);
@@ -177,7 +182,8 @@ export function WeddingTable({ data, isLoading = false }: WeddingTableProps) {
             </Text>
           )}
           <Text>
-            Сортировка: {getFieldLabel(sortField)} {sortDirection === 'asc' ? '↑' : '↓'}
+            Сортировка: {getFieldLabel(sortField)}{" "}
+            {sortDirection === "asc" ? "↑" : "↓"}
           </Text>
         </HStack>
       </Box>
@@ -202,16 +208,16 @@ export function WeddingTable({ data, isLoading = false }: WeddingTableProps) {
                     <Button
                       size="xs"
                       variant="ghost"
-                      onClick={() => handleSort('fullname')}
-                      color={sortField === 'fullname' ? 'blue.500' : 'gray.400'}
-                      _hover={{ bg: 'blue.50' }}
+                      onClick={() => handleSort("fullname")}
+                      color={sortField === "fullname" ? "blue.500" : "gray.400"}
+                      _hover={{ bg: "blue.50" }}
                       minW="auto"
                       px={1}
-                      aria-label={getSortTooltip('fullname')}
+                      aria-label={getSortTooltip("fullname")}
                       transition="all 0.2s"
-                      _active={{ transform: 'scale(0.95)' }}
+                      _active={{ transform: "scale(0.95)" }}
                     >
-                      {getSortIcon('fullname')}
+                      {getSortIcon("fullname")}
                     </Button>
                   </HStack>
                 </Table.ColumnHeader>
@@ -221,18 +227,21 @@ export function WeddingTable({ data, isLoading = false }: WeddingTableProps) {
                     <Button
                       size="xs"
                       variant="ghost"
-                      onClick={() => handleSort('guests')}
-                      color={sortField === 'guests' ? 'blue.500' : 'gray.400'}
-                      _hover={{ bg: 'blue.50' }}
+                      onClick={() => handleSort("guests")}
+                      color={sortField === "guests" ? "blue.500" : "gray.400"}
+                      _hover={{ bg: "blue.50" }}
                       minW="auto"
                       px={1}
-                      aria-label={getSortTooltip('guests')}
+                      aria-label={getSortTooltip("guests")}
                       transition="all 0.2s"
-                      _active={{ transform: 'scale(0.95)' }}
+                      _active={{ transform: "scale(0.95)" }}
                     >
-                      {getSortIcon('guests')}
+                      {getSortIcon("guests")}
                     </Button>
                   </HStack>
+                </Table.ColumnHeader>
+                <Table.ColumnHeader fontSize={{ base: "xs", md: "sm" }}>
+                  Комментарий
                 </Table.ColumnHeader>
                 <Table.ColumnHeader fontSize={{ base: "xs", md: "sm" }}>
                   <HStack gap={2} justify="space-between">
@@ -240,16 +249,18 @@ export function WeddingTable({ data, isLoading = false }: WeddingTableProps) {
                     <Button
                       size="xs"
                       variant="ghost"
-                      onClick={() => handleSort('guest_side')}
-                      color={sortField === 'guest_side' ? 'blue.500' : 'gray.400'}
-                      _hover={{ bg: 'blue.50' }}
+                      onClick={() => handleSort("guest_side")}
+                      color={
+                        sortField === "guest_side" ? "blue.500" : "gray.400"
+                      }
+                      _hover={{ bg: "blue.50" }}
                       minW="auto"
                       px={1}
-                      aria-label={getSortTooltip('guest_side')}
+                      aria-label={getSortTooltip("guest_side")}
                       transition="all 0.2s"
-                      _active={{ transform: 'scale(0.95)' }}
+                      _active={{ transform: "scale(0.95)" }}
                     >
-                      {getSortIcon('guest_side')}
+                      {getSortIcon("guest_side")}
                     </Button>
                   </HStack>
                 </Table.ColumnHeader>
@@ -257,24 +268,23 @@ export function WeddingTable({ data, isLoading = false }: WeddingTableProps) {
                   Телефон
                 </Table.ColumnHeader>
                 <Table.ColumnHeader fontSize={{ base: "xs", md: "sm" }}>
-                  Комментарий
-                </Table.ColumnHeader>
-                <Table.ColumnHeader fontSize={{ base: "xs", md: "sm" }}>
                   <HStack gap={2} justify="space-between">
                     <Text>Дата</Text>
                     <Button
                       size="xs"
                       variant="ghost"
-                      onClick={() => handleSort('created_at')}
-                      color={sortField === 'created_at' ? 'blue.500' : 'gray.400'}
-                      _hover={{ bg: 'blue.50' }}
+                      onClick={() => handleSort("created_at")}
+                      color={
+                        sortField === "created_at" ? "blue.500" : "gray.400"
+                      }
+                      _hover={{ bg: "blue.50" }}
                       minW="auto"
                       px={1}
-                      aria-label={getSortTooltip('created_at')}
+                      aria-label={getSortTooltip("created_at")}
                       transition="all 0.2s"
-                      _active={{ transform: 'scale(0.95)' }}
+                      _active={{ transform: "scale(0.95)" }}
                     >
-                      {getSortIcon('created_at')}
+                      {getSortIcon("created_at")}
                     </Button>
                   </HStack>
                 </Table.ColumnHeader>
@@ -291,7 +301,10 @@ export function WeddingTable({ data, isLoading = false }: WeddingTableProps) {
                       {item.fullname}
                     </Text>
                   </Table.Cell>
+
                   <Table.Cell>{item.guests}</Table.Cell>
+                  <Table.Cell>{item.commentary}</Table.Cell>
+
                   <Table.Cell>
                     <Badge
                       colorPalette={
@@ -325,7 +338,6 @@ export function WeddingTable({ data, isLoading = false }: WeddingTableProps) {
                       </Text>
                     )}
                   </Table.Cell>
-                  <Table.Cell>{item.commentary}</Table.Cell>
                   <Table.Cell>
                     <Text fontSize={{ base: "xs", md: "xs" }} color="gray.600">
                       {formatDate(item.created_at)}
@@ -347,7 +359,8 @@ export function WeddingTable({ data, isLoading = false }: WeddingTableProps) {
           textAlign="center"
         >
           <Text fontSize="sm" color="blue.600">
-            🔍 Поиск: "{searchTerm}" • Найдено {processedData.length} результатов
+            🔍 Поиск: "{searchTerm}" • Найдено {processedData.length}{" "}
+            результатов
           </Text>
         </Box>
       )}
